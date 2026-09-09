@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dshtqrci6l2ii"]
+
+[ext_resource type="Script" uid="uid://ii1nhmq4w3sc" path="res://microgames/microgame_template/Scenes/enemy.gd" id="1_8aco1"]
+[ext_resource type="Texture2D" uid="uid://chwjbv6xn5xt" path="res://sprites/Animated Aphide.png" id="2_jyp6r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jye7p"]
+atlas = ExtResource("2_jyp6r")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nprhw"]
+atlas = ExtResource("2_jyp6r")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjntd"]
+atlas = ExtResource("2_jyp6r")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiabm"]
+atlas = ExtResource("2_jyp6r")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2yyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jye7p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nprhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjntd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiabm")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fnc6h"]
+
+[node name="Enemy" type="Area2D" groups=["Enemy"]]
+script = ExtResource("1_8aco1")
+
+[node name="Aphide" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_d2yyo")
+animation = &"walk"
+frame_progress = 0.38815194
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.3875368
+shape = SubResource("CircleShape2D_fnc6h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,187 @@
+[gd_scene load_steps=21 format=4 uid="uid://3i5s37pnwpwc"]
+
+[ext_resource type="Script" uid="uid://cqwucx826k1ne" path="res://microgames/microgame_template/my_microgame.gd" id="1_bnc4l"]
+[ext_resource type="PackedScene" uid="uid://ddhoio73023ba" path="res://scenes/main/bomb_timer/bomb_timer.tscn" id="2_gg47g"]
+[ext_resource type="Texture2D" uid="uid://cl2d5cjiequjf" path="res://microgames/microgame_template/Assets/Free Isometric Tileset by KyleD/Grass Pack Spritesheet.png" id="3_1scga"]
+[ext_resource type="Texture2D" uid="uid://ce564siyoo1lu" path="res://sprites/Animated Ladybug.png" id="4_1scga"]
+[ext_resource type="Script" uid="uid://lprbfmr8y6q5" path="res://microgames/microgame_template/player_movement.gd" id="5_1tsqp"]
+[ext_resource type="Texture2D" uid="uid://chwjbv6xn5xt" path="res://sprites/Animated Aphide.png" id="5_jdu0x"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1tsqp"]
+texture = ExtResource("3_1scga")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -7.5, -16, 0, 0, 7.5, 16, 0)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -7.5, -16, 0, 0, 7.5, 16, 0)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -7.5, -16, 0, 0, 7.5, 16, 0)
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mri5n"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(32, 15)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1tsqp")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tsqp"]
+atlas = ExtResource("4_1scga")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mri5n"]
+atlas = ExtResource("4_1scga")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnc6h"]
+atlas = ExtResource("4_1scga")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arffs"]
+atlas = ExtResource("4_1scga")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gtrwc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tsqp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mri5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnc6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arffs")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mri5n"]
+radius = 50.0
+height = 168.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jye7p"]
+atlas = ExtResource("5_jdu0x")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nprhw"]
+atlas = ExtResource("5_jdu0x")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjntd"]
+atlas = ExtResource("5_jdu0x")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiabm"]
+atlas = ExtResource("5_jdu0x")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2yyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jye7p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nprhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjntd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiabm")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1scga"]
+radius = 25.0
+height = 102.000015
+
+[node name="MyMicrogame" type="Node2D" node_paths=PackedStringArray("bomb_timer")]
+process_mode = 1
+script = ExtResource("1_bnc4l")
+bomb_timer = NodePath("BombTimer")
+
+[node name="BombTimer" parent="." instance=ExtResource("2_gg47g")]
+position = Vector2(67, 354)
+
+[node name="Background" type="TileMapLayer" parent="."]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAHAAAAAAAAAAMAAAAHAAEAAAAAAAIAAAAGAP//AAABAAMAAAAHAP//AAAAAAMAAAAIAP7/AAAAAAIAAAAIAP//AAAAAAIAAAAHAP7/AAABAAIAAAAGAAIAAAABAAIAAAAHAAIAAAAAAAMAAAAHAAMAAAAAAAMAAAAIAAQAAAAAAAMAAAACAAAAAAAAAAMAAAABAP7/AAAAAAMAAAABAAEAAAACAAMAAAACAP//AAAAAAMAAAAEAP//AAAAAAIAAAABAP//AAACAAEAAAAAAAEAAAACAAEAAAAAAAAAAAABAAEAAAAAAP//AAABAAEAAAD//wAAAAACAAEAAAABAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAGAPz/AAABAAMAAAAFAPz/AAAAAAMAAAAGAPr/AAACAAMAAAAGAAYAAAABAAEAAAAHAAcAAAACAAEAAAAGAAcAAAACAAEAAAAIAAcAAAABAAEAAAAJAAYAAAACAAEAAAAJAAQAAAACAAEAAAALAAQAAAACAAEAAAAMAAMAAAABAAEAAAAMAAEAAAACAAEAAAALAP//AAACAAEAAAADAAQAAAAAAAMAAAAEAAUAAAAAAAMAAAAFAAYAAAABAAEAAAACAAMAAAAAAAMAAAABAAIAAAACAAEAAAACAAEAAAABAAEAAAAEAPz/AAABAAEAAAAFAPv/AAACAAEAAAAFAPr/AAACAAEAAAAGAPv/AAACAAEAAAAHAPv/AAACAAEAAAACAP3/AAACAAEAAAAJAAEAAAAAAAIAAAAJAP3/AAACAAMAAAACAAIAAAABAAMAAAADAAIAAAAAAAIAAAADAAMAAAAAAAMAAAAEAAMAAAAAAAMAAAAEAAQAAAABAAMAAAAFAAQAAAAAAAMAAAAFAAUAAAAAAAMAAAAGAAUAAAAAAAIAAAAHAAUAAAAAAAMAAAAHAAYAAAAAAAMAAAAIAAYAAAAAAAMAAAAIAAUAAAAAAAMAAAAJAAUAAAAAAAMAAAAKAAUAAAAAAAMAAAAKAAQAAAAAAAMAAAAKAAMAAAAAAAMAAAAJAAMAAAAAAAMAAAAJAAIAAAAAAAMAAAAIAAIAAAAAAAMAAAAIAAMAAAAAAAMAAAAHAAQAAAACAAMAAAAGAAQAAAAAAAMAAAAGAAMAAAABAAIAAAAFAAMAAAAAAAMAAAAFAAIAAAAAAAMAAAAFAAEAAAAAAAMAAAAEAAIAAAAAAAMAAAAEAAEAAAABAAMAAAADAAEAAAAAAAMAAAAEAAAAAAAAAAMAAAAFAAAAAAAAAAIAAAAGAAAAAAAAAAMAAAAGAAEAAAAAAAIAAAADAP//AAAAAAMAAAADAP7/AAAAAAMAAAACAP7/AAAAAAIAAAADAP3/AAAAAAIAAAADAPz/AAABAAMAAAAEAP3/AAABAAIAAAAEAP7/AAAAAAMAAAAFAP7/AAAAAAMAAAAFAP//AAAAAAMAAAAFAP3/AAAAAAMAAAAGAP7/AAAAAAMAAAAGAP3/AAAAAAMAAAAHAP3/AAAAAAIAAAAHAPz/AAABAAIAAAAIAPz/AAAAAAMAAAAIAP3/AAAAAAMAAAAIAAEAAAAAAAMAAAAIAAAAAAAAAAMAAAAJAAAAAAAAAAMAAAAJAP//AAAAAAMAAAAKAP//AAAAAAMAAAAJAP7/AAAAAAIAAAAKAP7/AAAAAAMAAAAKAAAAAAABAAIAAAALAAAAAAAAAAMAAAALAAEAAAAAAAMAAAALAAIAAAAAAAMAAAAMAAIAAAAAAAMAAAANAAIAAAACAAEAAAANAAEAAAABAAEAAAAMAAAAAAACAAEAAAAKAAIAAAABAAMAAAAKAAEAAAAAAAMAAAACAAQAAAAAAAMAAAADAAUAAAABAAIAAAAJAPz/AAAAAAMAAAAKAP3/AAAAAAMAAAA=")
+tile_set = SubResource("TileSet_mri5n")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(32, -35)
+motion_mode = 1
+script = ExtResource("5_1tsqp")
+
+[node name="Ladybug" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(402, 173)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_gtrwc")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(403, 191)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_mri5n")
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+
+[node name="Aphide" type="AnimatedSprite2D" parent="Enemy"]
+position = Vector2(168, 195)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_d2yyo")
+animation = &"walk"
+frame_progress = 0.38815194
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(166, 206)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_1scga")

@@ -1,0 +1,7 @@
+res://microgames/microgame_template/my_microgame.tscn
+res://microgames/microgame_template/player_movement.gd
+res://microgames/microgame_template/my_microgame.gd
+res://microgames/microgame_template/Scenes/enemy.tscn
+res://microgames/microgame_template/Scenes/enemy.gd
+res://scenes/main/main.tscn
+res://microgames/microgame_template/background_music.gd

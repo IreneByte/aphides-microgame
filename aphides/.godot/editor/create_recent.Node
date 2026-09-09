@@ -1,0 +1,15 @@
+AudioStreamPlayer      - Matches the "sound" keyword.
+AudioStreamPlayer2D      - Matches the "sound" keyword.
+AudioStreamPlayer2D
+Label
+Area2D
+Timer
+Node2D
+Label      - Matches the "text" keyword.
+AudioStreamPlayer      - Matches the "music" keyword.
+CollisionShape2D
+CharacterBody2D
+AnimatedSprite2D
+TileMapLayer
+AnimationPlayer
+TileMap

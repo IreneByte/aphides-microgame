@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://da3dto3ef2gp6"
+path="res://.godot/imported/Background Music.mp3-c5a2da193ef8a43ead2bd5e78dba9cb3.mp3str"
+
+[deps]
+
+source_file="res://microgames/microgame_template/Assets/Background Music.mp3"
+dest_files=["res://.godot/imported/Background Music.mp3-c5a2da193ef8a43ead2bd5e78dba9cb3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwvrjn7ixevw4"]
+
+[ext_resource type="Texture2D" uid="uid://dum8acaikoit" path="res://sprites/aphid.png" id="1_lm5uo"]
+[ext_resource type="Script" uid="uid://dbh68grtmwyut" path="res://microgames/microgame_template/Scripts/aphid.gd" id="2_568cu"]
+
+[node name="Aphid" type="Sprite2D"]
+rotation = 0.7853982
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_lm5uo")
+script = ExtResource("2_568cu")
